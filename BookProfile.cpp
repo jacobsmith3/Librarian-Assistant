@@ -3,26 +3,38 @@ using namespace std;
 
 class BookProfile {
 	
-	public:
-		// book name
-		string bookName = "";
-		// book ISBN
-		int32_t bookISBN;
+	
+	// book name
+	string bookName = "";
+	// book ISBN
+	int32_t bookISBN;
+
 	private:
 		// book reserve status
 		string bookStatus = "CLOSE";
-		// book availibility
+		// number of book availible
 		int32_t bookAvailibility = 0;
 
-	// all the method 
-	public:
-		//get the availibility of the book
-		int getAvailibility() {
-			return bookAvailibility;
-		}
-		string getStatus() {
-			return bookStatus;
-		}
+	// set method for book name
+	void setBookName(string name) {
+		bookName = name;
+	}
+	// set method for ISBN number
+	void setBookISBN(int num) {
+		bookISBN = num;
+	}
+	// set method for #copy of the book
+	void setBookAvailibility(int num) {
+		bookAvailibility = num;
+	}
+
+	//get the availibility of the book
+	int getAvailibility() {
+		return bookAvailibility;
+	}
+	string getStatus() {
+		return bookStatus;
+	}
 		
 	// change reserve status
 	void changeRervStatus() {
@@ -30,14 +42,15 @@ class BookProfile {
 		if (bookAvailibility > 0) {
 			bookStatus == "OPEN";
 		}
-		else cout << "invalid " << endl;
+		else cout << "invalid" << endl;
 	}
 
-	// if checkout update number of book 
+	// if checkout called, change number of book 
 	// change availibility on book
 	void changeAvailibility(int x) {
 		// current number of book minus the book checked out
-		
+		// if checkout is valid
+		bookAvailibility--;
 	}
 
 	// print bookprofile 
