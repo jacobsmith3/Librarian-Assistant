@@ -1,59 +1,65 @@
 #include <iostream>
 using namespace std;
 
-class UserProfile {
+class BookProfile {
+	
+	
+	// book name
+	string bookName = "";
+	// book ISBN
+	int32_t bookISBN;
 
 	private:
-		// User Login
-		string username = "";
-		string password = "";
-		string accountStatus ;
-		int32_t accountBalance = 0 ;
+		// book reserve status
+		string bookStatus = "CLOSE";
+		// number of book availible
+		int32_t bookAvailibility = 0;
 
-	// display user profile
-	void viewProfile() {
-		cout << username << endl;
-		cout << accountStatus << endl;
-		cout << accountBalance << endl;
+	// set method for book name
+	void setBookName(string name) {
+		bookName = name;
 	}
-
-	// change username on database
-	void editUser(string newUsername) {
-		username = newUsername;
+	// set method for ISBN number
+	void setBookISBN(int num) {
+		bookISBN = num;
 	}
-	
-	// change password on database
-	void editPass(string newPassword) {
-		password = newPassword;
-	}
-	
-	// assign account stauts Admin or User
-	void setAccountStatus(string status) {
-		if (status == "Admin") {
-			accountStatus = status;
-		}
-		else accountStatus = "User";
+	// set method for #copy of the book
+	void setBookAvailibility(int num) {
+		bookAvailibility = num;
 	}
 
-	// set the account balance 
-	void setBalance(int amount) {
-		accountBalance = amount;
-	}
-
-	// the account balance minus the amount 
-	void payBalance(int amount) {
-		accountBalance = accountBalance - amount;
-	}
-
-	// get method for User Profile class
-	string getUser() {
-		return username;
+	//get the availibility of the book
+	int getAvailibility() {
+		return bookAvailibility;
 	}
 	string getStatus() {
-		return accountStatus;
+		return bookStatus;
 	}
-	int32_t getBalance() {
-		return accountBalance;
+		
+	// change reserve status
+	void changeRervStatus() {
+		// if no more book available to borrow reserve status to no
+		if (bookAvailibility > 0) {
+			bookStatus == "OPEN";
+		}
+		else cout << "invalid" << endl;
 	}
+
+	// if checkout called, change number of book 
+	// change availibility on book
+	void changeAvailibility(int x) {
+		// current number of book minus the book checked out
+		// if checkout is valid
+		bookAvailibility--;
+	}
+
+	// print bookprofile 
+	void bookProfile() {
+		cout << bookName << endl;
+		cout << bookISBN << endl;
+		cout << bookStatus << endl;
+		cout << bookAvailibility << endl;
+	}
+		
 
 };
