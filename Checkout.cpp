@@ -6,8 +6,8 @@ using namespace std;
 
 class Checkout {
     private:
-    //list:<BookProfile> Books  //this will be an array with BookProfile data types inside
-    //User = UserProfile() 
+    list:<BookProfile> Books  //this will be an array with BookProfile data types inside
+    User = UserProfile() 
     
     public:
     bool BookLimit()
@@ -20,5 +20,11 @@ class Checkout {
         {
             return false
         }
+    }
+    
+    void checkout()
+    {
+        for int i = 0:
+        
     }
 };
