@@ -3,11 +3,13 @@ using namespace std;
 
 class BookProfile {
 	
-	
+	public:
 	// book name
 	string bookName = "";
 	// book ISBN
 	int32_t bookISBN;
+	// book quantity
+	int32_t bookQuantity = 1;
 
 	private:
 		// book reserve status
