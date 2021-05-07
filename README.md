@@ -13,4 +13,4 @@ The people who are working on this Project are myself(Jacob Smith), Lucas, Ali, 
 Instructions: 
 For our prototype, we will be going through the search use case. How to use this is you will be promted to search for a book by ISBN number, you may search any four numbers you like, but if you would like to find an actual book then search 0001, 0002, or 0003. Those three ISBN numbers are valid and return a book.  
 
-youtube link of demonstartion: https://discordapp.com/channels/803705278079565876/803705278565580848/840331032615583745
+youtube link of demonstartion: https://www.youtube.com/watch?v=wM6g4vbyAq0
