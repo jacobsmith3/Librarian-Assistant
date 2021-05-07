@@ -9,6 +9,7 @@ class UserProfile {
 		string password = "";
 		string accountStatus ;
 		int32_t accountBalance = 0 ;
+		bool loginStatus;
 
 	// display user profile
 	void viewProfile() {
@@ -52,8 +53,17 @@ class UserProfile {
 	string getStatus() {
 		return accountStatus;
 	}
+
+	string getPassword(){
+		return password;
+	}
+
 	int32_t getBalance() {
 		return accountBalance;
+	}
+
+	bool getLoginStatus() {
+		return loginStatus;
 	}
 
 };
