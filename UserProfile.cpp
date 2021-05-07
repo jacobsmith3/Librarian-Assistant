@@ -11,6 +11,7 @@ class UserProfile {
 		int32_t accountBalance = 0 ;
 		bool loginStatus;
 
+	public:
 	// display user profile
 	void viewProfile() {
 		cout << username << endl;
