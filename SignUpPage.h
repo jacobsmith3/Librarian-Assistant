@@ -5,22 +5,32 @@
 #include <list>
 #include <fstream>
 
+// sign up page class
 class SignUpPage
 {
 private:
     std::list<UserProfile> menu;
     int size;
 public:
+    // constructor
     SignUpPage();
+
+    // sign up
     void signUp(std::string inputUsername, std::string inputPassword);
+
+    // sign in
     bool signIn(std::string inputUsername, std::string inputPassword);
+
+    // check if the list is empty
     bool isEmpty();
+
+    // destructor
     ~SignUpPage();
 };
 
 SignUpPage::SignUpPage()
 {
-    // constructs the sign up page class
+    // constructs the sign up page class and overall sign up loop
     this->size = 0;
     int choice = 0;
     bool loginStatus = false;
@@ -32,6 +42,8 @@ SignUpPage::SignUpPage()
         std::cout << "1. Sign in" << std::endl;
         std::cout << "2. Sign up" << std::endl;
         std::cout << "3. Exit" << std::endl;
+
+        // check if the choice is within the range
         std::cin >> choice;
         while (choice < 1 && choice > 2)
         {
@@ -52,6 +64,7 @@ SignUpPage::SignUpPage()
             loginStatus = signIn(username, password);
             if(loginStatus = true)
             {
+                std::cout << "Welcome " << username << std::endl;
                 return;
             }
             break;
@@ -62,7 +75,7 @@ SignUpPage::SignUpPage()
             std::cin >> username;
             std::cout << "Enter your password" << std::endl;
             std::cin >> password;
-            //signUp(username, password);
+            signUp(username, password);
             break;
         
         default: // exit
@@ -72,6 +85,7 @@ SignUpPage::SignUpPage()
     } while (choice >= 1 && choice <= 2);
 }
 
+// sign up 
 void SignUpPage::signUp(std::string inputUsername, std::string inputPassword)
 {
     UserProfile a;
@@ -81,6 +95,7 @@ void SignUpPage::signUp(std::string inputUsername, std::string inputPassword)
     this->size++;
 }
 
+// sign in 
 bool SignUpPage::signIn(std::string inputUsername, std::string inputPassword)
 {
     for(int i = 0; i < size; i++)
@@ -100,6 +115,7 @@ bool SignUpPage::signIn(std::string inputUsername, std::string inputPassword)
     
 }
 
+// check if the list is empty
 bool SignUpPage::isEmpty()
 {
     if(this->size == 0)
@@ -109,7 +125,7 @@ bool SignUpPage::isEmpty()
     return false;
 }
 
-
+// destructor
 SignUpPage::~SignUpPage()
 {
     this->menu.clear();
